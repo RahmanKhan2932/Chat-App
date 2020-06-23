@@ -56,7 +56,7 @@ public class Login extends AppCompatActivity {
                     password.setError("can't be blank");
                 }
                 else{
-                    String url = "https://androidchatapp-76776.firebaseio.com/users.json";
+                    String url = "-Firebase URL-";
                     final ProgressDialog pd = new ProgressDialog(Login.this);
                     pd.setMessage("Loading...");
                     pd.show();
@@ -65,7 +65,7 @@ public class Login extends AppCompatActivity {
                         @Override
                         public void onResponse(String s) {
                             if(s.equals("null")){
-                                Toast.makeText(Login.this, "user not found", Toast.LENGTH_LONG).show();
+                                Toast.makeText(Login.this, "User not found", Toast.LENGTH_LONG).show();
                             }
                             else{
                                 try {
@@ -80,7 +80,7 @@ public class Login extends AppCompatActivity {
                                         startActivity(new Intent(Login.this, Users.class));
                                     }
                                     else {
-                                        Toast.makeText(Login.this, "incorrect password", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(Login.this, "Incorrect password", Toast.LENGTH_LONG).show();
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
